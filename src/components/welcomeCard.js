@@ -14,7 +14,7 @@ function WelcomeCard({name, imageSrc, description}) {
                 <a href='https://tinyurl.com/built-uiuc' target='_blank' rel='noopener noreferrer'>
                     <img src = 'slack-svgrepo-com.svg' alt='twitter svg' />
                 </a>
-                <a href='https://github.com/orgs/B-U-I-L-T-UIUC/repositories' target='_blank' rel='noopener noreferrer'>
+                <a href='https://github.com/BUILT-Illinois' target='_blank' rel='noopener noreferrer'>
                     <img src = 'github-svgrepo-com.svg' alt='github svg' />
                 </a>
                 <a href='https://www.instagram.com/built_uiuc/' target='_blank' rel='noopener noreferrer'>
