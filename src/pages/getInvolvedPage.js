@@ -37,15 +37,15 @@ function GetInvolvedPage() {
       <div className="light-orange-card">
         <CommitteeCard
           name="Tech"
-          lead="Bolden Jones"
-          netid="boldenj2"
+          lead="Steven Uruchima"
+          netid="scu2"
           description="Build technical projects supporting B[U]ILT’s mission!"
-          meeting="Meets 5:00-6:00 PM every Monday at Siebel CS 0212"
+          meeting="Meets 6:00-7:00 PM every Monday at Siebel CS 0218"
           channel="tech-committee"
         ></CommitteeCard>
         <CommitteeCard
           name="External"
-          lead="Alejandro Chavez"
+          lead="Alondra Gonzalez"
           netid="achav8"
           description="Build and maintain partnership opportunities between B[U]ILT and sponsors!"
           meeting="Meets every other Thursday 4:30 at Siebel CS 0212"
@@ -53,19 +53,19 @@ function GetInvolvedPage() {
         ></CommitteeCard>
         <CommitteeCard
           name="Social"
-          lead="Adela Bautista"
-          netid="adelab2"
+          lead="Jasmin Salgado"
+          netid="jsalg20"
           description="Plan and organize social events to build B[U]ILT’s community!"
-          meeting="Meets every Friday 3:30-4:30 PM at Siebel CS 0212"
+          meeting="Meets every other Tuesday 5:00-6:00 PM at Siebel CS 0212"
           channel="social-committee"
         ></CommitteeCard>
         <CommitteeCard
           name="Outreach"
-          lead="Alexis Serrano"
-          netid="aserr3"
+          lead="Bijou Leinbach"
+          netid="bijoucl2"
           description="Engage with high schools to inspire future B[U]ILT members to study at UIUC!"
-          meeting="Meeting times TBA"
-          channel="outreach-committee coming soon"
+          meeting="Check the calendar for meeting times!"
+          channel="outreach-committee"
         ></CommitteeCard>
       </div>
     </div>
