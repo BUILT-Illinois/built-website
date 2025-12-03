@@ -109,7 +109,7 @@ const data = [
         image: "/eboard/alondra.jpg",
         title: "External Director",
         name: "Alondra Gonzalez",
-        pronouns: "he/him",
+        pronouns: "she/her",
         email: "ag131@illinois.edu",
         description: "Alondra is a Senior in Computer Science who transferred to UIUC in Fall 2024. She is committed to making tech more accessible and inclusive, and through her role as External Director of B[U]ILT, she works to empower minority students to thrive in the industry. She has previous internship experiences at Atlassian and Microsoft and will be working full time at Atlassian after graduation." 
     },
