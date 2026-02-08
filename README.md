@@ -1,4 +1,4 @@
-# BUILT-Website
+# B[U]ILT Website
 
 Welcome to B[U]ILT UIUC's club website repository! Here you will find the current website's code, anything we're currently working on, a description of our tech stack, and our best practices.
 
