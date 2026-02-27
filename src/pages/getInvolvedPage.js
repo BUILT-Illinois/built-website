@@ -48,7 +48,7 @@ function GetInvolvedPage() {
           lead="Alondra Gonzalez"
           netid="achav8"
           description="Build and maintain partnership opportunities between B[U]ILT and sponsors!"
-          meeting="Meets every other Thursday 4:30 at Siebel CS 0212"
+          meeting="Meets every other Wednesday 2:00 at Siebel CS 0212"
           channel="external-committee"
         ></CommitteeCard>
         <CommitteeCard
@@ -66,6 +66,14 @@ function GetInvolvedPage() {
           description="Engage with high schools to inspire future B[U]ILT members to study at UIUC!"
           meeting="Check the calendar for meeting times!"
           channel="outreach-committee"
+        ></CommitteeCard>
+        <CommitteeCard
+          name="Fundraising"
+          lead="Adrian Lara"
+          netid="alara2"
+          description="Raise funds to support B[U]ILT’s mission!"
+          meeting="Meets every other Thursday 5:00-6:00 PM at Siebel CS 0212"
+          channel="fundraising-committee"
         ></CommitteeCard>
       </div>
     </div>
