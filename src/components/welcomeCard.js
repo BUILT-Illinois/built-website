@@ -5,7 +5,7 @@ function WelcomeCard({name, imageSrc, description}) {
     return (
         <div className='welcome-card'>
 
-            <h1 className='welcome-text'>B[U]ILT @ UIUC</h1> 
+            <h1 className='welcome-text'>B[U]ILT By ColorStack @ UIUC</h1> 
             <p className='welcome-desc'>
                 Empowering underrepresented voices in computing at UIUC -- 
                 join us in building a diverse future!

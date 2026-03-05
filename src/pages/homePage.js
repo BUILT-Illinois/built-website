@@ -4,6 +4,8 @@ import '../styles/homePage.css';
 import PhotoCarousel from '../components/photoCarousel';
 //import MemberCard from '../components/memberCard';
 import WelcomeCard from '../components/welcomeCard';
+import SponsorsSlider from '../components/sponsorsSlider';
+import sponsors from '../utils/sponsorsData';
 
 function HomePage() {
     const carouselImages = [
@@ -22,7 +24,7 @@ function HomePage() {
             <StickyNavBar />
             <div className='logo-row'>
                 <img
-                    src="built-logo.png"
+                    src="built-logo-no-background.png"
                     className='home-logo'
                     alt=''
                 />
@@ -31,6 +33,9 @@ function HomePage() {
                 <WelcomeCard className="welcome-card"/>
                 <PhotoCarousel imageSrcs={carouselImages} className="photo-carousel"/>
             </div>
+            
+            <h1 className='home-text'>Our Sponsors</h1>
+            <SponsorsSlider sponsors={sponsors} />
             
             {/* <h1 className='home-text'> Members Of The Month!</h1>
             <div className='month-members'>

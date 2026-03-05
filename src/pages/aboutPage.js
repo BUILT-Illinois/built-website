@@ -21,7 +21,7 @@ function AboutPage() {
                 <section className='mission' id='mission'>
                     <h2 className='brown merriweather' >Mission Statement</h2>
                     <div className='divider'></div>
-                    <p>B[U]ILT is a non-profit student organization at the University of Illinois at Urbana-Champaign. We strive to become a strong support system for minorities in computing-related fields that fosters scholarship, professional development, and a sense of community. We seek to improve the diversity of the workplace in computing fields by holding technical and professional events for current students, in addition to running outreach programs to encourage the next generation of students from underrepresented communities to pursue careers in computing fields.</p>
+                    <p>B[U]ILT (Black, Indigenous, and Latino in Tech) by ColorStack is a non-profit student organization at the University of Illinois at Urbana-Champaign. We strive to become a strong support system for minorities in computing-related fields that fosters scholarship, professional development, and a sense of community. We seek to improve the diversity of the workplace in computing fields by holding technical and professional events for current students, in addition to running outreach programs to encourage the next generation of students from underrepresented communities to pursue careers in computing fields.</p>
                 </section>
                 <h2 className='brown value-header merriweather'>Our Values</h2>
                 <section className='values'>
