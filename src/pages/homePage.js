@@ -9,15 +9,36 @@ import sponsors from '../utils/sponsorsData';
 
 function HomePage() {
     const carouselImages = [
-        "Speed-Friending.png",
-        "coffee-social.png",
-        "coffee-soical-2.png",
-        "e-board.png",
-        "KlayvioTalk.png",
-        "OpenHouse-Food.png",
-        "OpenHouse2.JPEG",
-        "built-shirt.png",
-    ];
+        "/event-photos/meet-exec.jpg",
+        "/event-photos/elections-2026.jpg",
+        "/event-photos/cboe.jpg",
+        "/event-photos/built-barbies-merch.jpg",
+        "/event-photos/speedfriending.jpg",
+        "/event-photos/atlassian.jpg",
+        "/event-photos/visa.jpg",
+        "/event-photos/whm-panel.jpg",
+        "/event-photos/pwc.jpg",
+        "/event-photos/letters-of-love.jpg",
+        "/event-photos/brewlab-3.jpg",
+        "/event-photos/corn-maze.jpg",
+        "/event-photos/builtsgiving.jpg",
+        "/event-photos/portillos.jpg",
+        "/event-photos/hackathon-3.jpg",
+        "/event-photos/housewarming.jpg",
+        "/event-photos/atlassian-2.jpg",
+        "/event-photos/hackathon-2.jpg",
+        "/event-photos/nmsh-2.jpg",
+        "/event-photos/fundraising.jpg",
+        "/event-photos/quad-day.jpg",
+        "/event-photos/hackathon.jpg",
+        "/event-photos/built-day.jpg",
+        "/event-photos/brewlab-2.jpg",
+        "/event-photos/brewlab.jpg",
+        "/event-photos/eoh.jpg",
+        "/event-photos/duolingo.jpg",
+        "/event-photos/gbm-icebreaker.jpg",
+        "/event-photos/intramurals.jpg",
+        ];
 
     return (    
         <div className="Home-Page">
