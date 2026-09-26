@@ -5,7 +5,7 @@ const EmbGoogleCal = () => {
     return (
     <div className="googleCal">
         <iframe
-            src = "https://calendar.google.com/calendar/embed?src=c_8ad2baa493507a75ae60a1871af32c2947f15494ebce1d0bdec1e02cc97c2954%40group.calendar.google.com&ctz=America%2FChicago"
+            src = "https://calendar.google.com/calendar/embed?src=c_ffa94f99edc250040f3408edd5bcee3e3e3f3f4ac7b412a80f7b62adcfcb7ca0%40group.calendar.google.com&ctz=America%2FChicago"
             style = {{
                 border: 'solid 3px #e34103',
                 borderRadius: '7px',
