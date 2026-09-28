@@ -14,12 +14,17 @@ Welcome to B[U]ILT UIUC's club website repository! Here you will find the curren
 
  Our current tech stack includes the use of:
 
- 1. React.js
+ 1. Next.js (TypeScript, React)
  2. HTML
- 3. JavaScript
  3. CSS
 
- In the feature we will most likely use Microsoft Azure for their cloud computing services and hosting capabilities.
+ The site is migrating to a Next.js + AWS stack (S3/CloudFront, App Runner, RDS
+ PostgreSQL) that also hosts the club's attendance tracker. See
+ [docs/aws-migration-plan.md](docs/aws-migration-plan.md) for the full plan and
+ [docs/PROJECT_SPEC.md](docs/PROJECT_SPEC.md) for the attendance tracker spec.
+
+ The website itself lives in [frontend/](frontend/) (Next.js, static export —
+ run `npm install && npm run dev` there for local development).
 
 ## Best Practices
 
