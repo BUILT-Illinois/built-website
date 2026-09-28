@@ -1,0 +1,10 @@
+/* Styles for the calendar page */
+.Calendar-Page {
+    background-color: #FFE7D7;
+    background: url("/built-background.png") center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    width: 100%;
+}
+h1{color: #4f180b;}

@@ -1,0 +1,7 @@
+# Shell scripts must keep LF endings. Git's autocrlf on Windows would otherwise
+# check them out with CRLF, and bash then fails on every line with
+# "$'\r': command not found" — including the infra/aws provisioning scripts.
+*.sh text eol=lf
+
+# The CloudFront Function is uploaded to AWS verbatim; keep it LF too.
+infra/cloudfront-index-rewrite.js text eol=lf
