@@ -1,6 +1,7 @@
 import type { Committee } from "../types/content";
 
-// 2026–27 committees, supplied by the RSO 2026-09-28.
+// 2026–27 committees, supplied by the RSO 2026-09-28. Fundraising was removed
+// at the RSO's request 2026-10-08.
 //
 // Per docs/aws-migration-plan.md §11 rule 3, this content is maintained by the
 // RSO and must not be refreshed or invented by an implementer — only edited
@@ -44,13 +45,5 @@ export const committees: Committee[] = [
       "Engage with high schools to inspire future B[U]ILT members to study at UIUC!",
     meeting: "Meets every Thursday 6:30-7:30 PM at Siebel CS 0212",
     channel: "outreach-committee",
-  },
-  {
-    name: "Fundraising",
-    lead: "Leo Mandujano",
-    email: "leom5@illinois.edu",
-    description: "Raise funds to support B[U]ILT’s mission!",
-    meeting: "Meets every other Friday 4:00-5:00 PM at Siebel CS 0212",
-    channel: "fundraising-committee",
   },
 ];
