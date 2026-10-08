@@ -14,13 +14,18 @@ const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".gif", ".webp"]);
 // every image in public/event-photos at build time instead, so adding a
 // photo to that folder is enough to put it in rotation. Runs at build time
 // only (static export), sorted alphabetically for a deterministic order.
+//
+// Filenames are URL-encoded before they become an <img src>. A name read from
+// disk is data, not markup: encoding keeps it a single path segment under
+// /event-photos/ whatever it contains, and makes names with "#" or "%" load
+// instead of breaking the URL.
 function getCarouselImages(): string[] {
   const dir = path.join(process.cwd(), "public", "event-photos");
   const files = fs
     .readdirSync(dir)
     .filter((file) => IMAGE_EXTENSIONS.has(path.extname(file).toLowerCase()))
     .sort((a, b) => a.localeCompare(b));
-  return files.map((file) => `/event-photos/${file}`);
+  return files.map((file) => `/event-photos/${encodeURIComponent(file)}`);
 }
 
 export default function HomePage() {
