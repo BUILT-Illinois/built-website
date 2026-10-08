@@ -1,7 +1,7 @@
 # B[U]ILT Website → AWS Migration & Attendance Tracker Integration Plan
 
-**Status:** In progress — Phase 1 complete, Phase 0 partly done
-**Last updated:** 2026-09-28
+**Status:** In progress — website live on AWS (Phase 2 cutover 2026-10-08); Phase 2 cleanup and Phase 0 EOH teardown outstanding
+**Last updated:** 2026-10-08
 **Owner:** Infrastructure / Tech Committee
 
 > **Picking this up to implement it? Read §11 (Execution notes) first** — it marks
@@ -417,9 +417,28 @@ it changes what renders, so it needs sign-off under §11 rule 2.
 
 **Exit:** ✅ feature-identical site running locally as a static Next.js export.
 
-### Phase 2 — DNS + AWS hosting cutover (1–2 days)
+### Phase 2 — DNS + AWS hosting cutover (1–2 days) — **CUT OVER 2026-10-08, cleanup open**
 
 Order matters. Move DNS control first, then swap the origin — never both at once.
+
+> **Where this stands (2026-10-08).** Nameservers moved from Squarespace to
+> Route 53 and apex + `www` repointed to CloudFront distribution
+> `E3G5E65UJ352H4` the same day. Verified through public DNS: all four pages
+> 200, 404 page works, HTTP→HTTPS redirect, six security headers present, zero
+> CSP violations in a real browser, `eoh` unaffected. Rollback remains
+> `infra/aws/04-cutover.sh --rollback`.
+>
+> Still open, in order:
+> 1. **Leave GitHub Pages on until 2026-10-09.** Squarespace served the old
+>    records with TTLs up to 6h that could not be lowered; resolvers holding
+>    them still send visitors to GitHub Pages until they expire.
+> 2. Then disable Pages, delete `frontend/public/CNAME`, retire
+>    `.github/workflows/deployment.yml`.
+> 3. `www` now serves the site directly instead of 301-redirecting to the apex
+>    as GitHub Pages did. Add a `www` → apex redirect to the CloudFront Function
+>    before Phase 3 — CORS will allowlist the exact apex origin.
+> 4. GitHub Actions OIDC deploy role. Until then deploys are
+>    `infra/aws/deploy.sh` run by hand.
 
 > **Step-by-step execution lives in `docs/phase-2-runbook.md`.** It splits this
 > into three independently verifiable stages (build AWS → move DNS control →
@@ -431,18 +450,20 @@ Order matters. Move DNS control first, then swap the origin — never both at on
 > not a static site. Carry the `eoh` record across unchanged and tear it down
 > before the backend lands.
 
-- [ ] Stand up authoritative DNS and recreate every record inventoried in Phase 0
+- [x] Stand up authoritative DNS and recreate every record inventoried in Phase 0
       (`docs/dns-inventory.md`). **Route 53 hosted zone in `builtuiuc`** (decided 2026-09-28) — it supports the
       apex alias record that Squarespace cannot.
       If EOH teardown has already happened (Phase 0), there is no `eoh` record to
       carry over; if it somehow has not, carry it and delete it afterwards in the
       DNS-record-first order §8 requires.
-- [ ] Lower TTLs in the Squarespace DNS panel ~24h ahead of the switch.
-- [ ] In Squarespace: **Use custom nameservers** → enter the NS values for the new
+- [ ] ~~Lower TTLs in the Squarespace DNS panel ~24h ahead of the switch.~~
+      Skipped — the Squarespace panel would not save a TTL below 4h. Accepted a
+      window of stale answers instead (see status note above).
+- [x] In Squarespace: **Use custom nameservers** → enter the NS values for the new
       zone. Verify apex and `www` (plus `eoh`, if it still exists) all resolve and
       serve before proceeding. Nameserver delegation is all-or-nothing: any record
       not recreated goes dark the moment it takes effect.
-- [ ] S3 bucket (private, OAC) + CloudFront distribution + ACM cert (us-east-1)
+- [x] S3 bucket (private, OAC) + CloudFront distribution + ACM cert (us-east-1)
       for the site; apex and `www` alias records. The ACM cert can be requested
       and DNS-validated **before** the nameserver switch — validation uses an
       ordinary subdomain CNAME, which Squarespace handles fine — and the whole
@@ -454,19 +475,20 @@ Order matters. Move DNS control first, then swap the origin — never both at on
       would. Add a small CloudFront Function that appends `index.html` to paths
       ending in `/` (keeps the bucket private), rather than switching to the
       website endpoint.
-- [ ] CloudFront response headers policy: CSP, HSTS, `X-Content-Type-Options`,
+- [x] CloudFront response headers policy: CSP, HSTS, `X-Content-Type-Options`,
       `X-Frame-Options: DENY`, Referrer-Policy, Permissions-Policy. Verify in
       production responses (the current GitHub Pages response has none of these).
 - [ ] GitHub Actions OIDC role; frontend deploy = `s3 sync` + invalidation.
-- [ ] **Pre-launch content check.** `grep -rn PLACEHOLDER_EMAIL frontend/` — every
+- [x] **Pre-launch content check.** `grep -rn PLACEHOLDER_EMAIL frontend/` — every
       remaining placeholder must be either replaced with real data or knowingly
       accepted by the user. Visible "placeholder email" text must not ship to a
       public RSO site by accident.
 - [ ] **Visual parity check.** Compare the deployed pages against the current
       GitHub Pages site before retiring it. Any unintended difference is a bug
       (§11 rule 2), not a new baseline.
-- [ ] Cut apex/`www` from GitHub Pages to CloudFront. Leave Pages up until DNS
-      settles, then disable the repo's Pages deployment and remove `public/CNAME`.
+- [x] Cut apex/`www` from GitHub Pages to CloudFront (2026-10-08).
+- [ ] Leave Pages up until DNS settles, then disable the repo's Pages deployment
+      and remove `public/CNAME`.
 
 **Exit:** built-illinois.org served from CloudFront with real security headers;
 old pipeline retired. **Milestone: website migrated.**
