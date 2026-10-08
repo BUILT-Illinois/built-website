@@ -39,6 +39,9 @@
        clipped the longer e-board bios. */
     height: auto;
     padding-inline: 2rem;
+    /* Room for the pagination dots — without it they sit on the last line of
+       any bio long enough to reach the bottom of the card. */
+    padding-bottom: 1.75rem;
 }
 
 .slides {
@@ -52,8 +55,11 @@
 
 .image {
     width: 80%;
+    /* Always square, and cropped rather than squashed if a photo is not. The
+       previous max-height: 90% flattened photos on cards with short bios. */
+    aspect-ratio: 1 / 1;
     height: auto;
-    max-height: 90%;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -62,6 +68,7 @@
     justify-content: center;
     align-items: center;
     width: 55%;
+    padding-block: 1rem;
 }
 
 
@@ -83,7 +90,7 @@
 
     .swiper {
         height: fit-content;
-        padding: 0;
+        padding: 0 0 1.75rem;
     }
 
     .slides {

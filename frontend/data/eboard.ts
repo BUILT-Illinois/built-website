@@ -1,6 +1,7 @@
 import type { EboardMember } from "../types/content";
 
-// 2026–27 e-board, supplied by the RSO 2026-09-28.
+// 2026–27 e-board, supplied by the RSO 2026-09-28; photos and introductions
+// added 2026-10-08.
 //
 // Per docs/aws-migration-plan.md §11 rule 3, this content is maintained by the
 // RSO and must not be refreshed or invented by an implementer — only edited
@@ -30,7 +31,8 @@ export const eboard: EboardMember[] = [
     title: "Secretary",
     name: "Owen Funke",
     email: "ofunk2@illinois.edu",
-    description: "",
+    description:
+      "Hey y'all! My name is Owen Funke, and I'm a senior in Computer Science, minoring in Legal Studies. I'm from Chicago, and transferred from City Colleges of Chicago. I enjoy sports, technology, and philosophy. I love to help people and talk about my experiences. I'm trying to compete with Tyler for B[U]ILT office rat, and I'll be there most days to come and yap",
   },
   {
     image: "/26-27-eboard/Leo.jpg",
@@ -44,7 +46,8 @@ export const eboard: EboardMember[] = [
     title: "Internal Director",
     name: "Tyler Ramsay",
     email: "trams4@illinois.edu",
-    description: "",
+    description:
+      "Hi! My name is Tyler! I'm a junior studying Computer Science and Economics with a minor in Dance. I'm from Chicago, IL. As you can tell, I love to Dance but I love to play video games and listen to music! I'm the current Internal Director for B[U]ILT for the 26-27 academic year, and my goals are to make B[U]ILT the safe space it needs to be, encourage members to come to events, find community, and to meet and greet new members who want to be apart of it. I'm always in the office! Come talk to me! Ask me about Minecraft, Just Dance, The Sims 4, or C++ and Economic Theory! Or anything your heart desires. I'm here for you!",
   },
   {
     image: "/26-27-eboard/Kay.jpg",
@@ -55,7 +58,7 @@ export const eboard: EboardMember[] = [
       "I'm a rising senior in Computer Science with a minor in Game Studies & Design. I'm very excited to be this year's social director, leading the social committee in planning fun events for B[U]ILT including collab events, Hispanic Heritage Month, Black History Month, Women's History Month, and other socializing opportunities. Outside of school, I love cooking, baking, reading, drawing, painting, and fitness. Slack me if you have any new social ideas or want to know how to get more involved in B[U]ILT!",
   },
   {
-    // No photo supplied yet.
+    image: "/26-27-eboard/Saniya.jpg",
     title: "External Director",
     name: "Saniya Sanders",
     email: "saniyas3@illinois.edu",
@@ -78,7 +81,7 @@ export const eboard: EboardMember[] = [
       "Hello, my name is Erick Gutierrez. I am a first-generation Sophomore student at UIUC majoring in Computer Science from Chicago, Illinois. I love to play sports, go to the gym, play Pokémon, and watch Anime. I'm super excited to be a part of B[U]ILT's mission in supporting underrepresented groups and fostering a tight-knit community. Feel free to reach out to me or say hi if you see me in person!",
   },
   {
-    // No photo supplied yet.
+    image: "/26-27-eboard/Bridget.jpg",
     title: "Graduate Affairs Director",
     name: "Bridget Agyare",
     email: "bagyare2@illinois.edu",
